@@ -9,15 +9,15 @@ requisicao = requests.get(endereco)
 
 if requisicao.status_code == 200:
     data = requisicao.json()
-    climaAtual = data['weather'][0]['description']
-    temperaturaMinima = round(data['main']['temp_min'])
-    temperaturaMaxima = round(data['main']['temp_max'])
-    cidadeSelecionada = data['name']
+    clima_atual = data['weather'][0]['description']
+    temperatura_minima = round(data['main']['temp_min'])
+    temperatura_maxima = round(data['main']['temp_max'])
+    cidade_selecionada = data['name']
      
     print('========================')
     print('     TEMPERATURA')
     print('========================')
-    print(f'Mínima: {temperaturaMinima}\n Máxima: {temperaturaMaxima}\n O clima está: {climaAtual}\n Cidade: {cidadeSelecionada}')
+    print(f'Mínima: {temperatura_minima}\nMáxima: {temperatura_maxima}\nO clima está: {clima_atual}\nCidade: {cidade_selecionada}')
 
 else:
     print('Houve um erro na requisição!')
